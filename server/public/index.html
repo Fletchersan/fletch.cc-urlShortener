@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fletch.sh - shortening urls since 2020</title>
+    <link rel="stylesheet" href="https://jenil.github.io/bulmaswatch/lumen/bulmaswatch.min.css">
+    <link rel="stylesheet" type='text/css' href="./style.css">
+</head>
+<body>
+    <section class="hero is-medium is-info is-bold">
+        <div class="hero-body">
+          <div class="container">
+            <h1 class="title">
+                fletch.sh
+            </h1>
+            <h2 class="subtitle">
+                shortening urls since 2020        
+            </h2>
+          </div>
+        </div>
+      </section>
+      <main id="app">
+        <form v-if="!success" @submit.prevent = "createFletch()">
+
+          <div v-if="error" class="notification is-danger is-light">
+            <!-- <button class="delete"></button> -->
+            {{error}}
+          </div>
+
+          <div class="field is-horizontal">
+              <div class="field-label is-normal">
+                <label class="label">URL</label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control">
+                    <input v-model='url' class="input" type="text" placeholder="http://example.com" required>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+
+            <div class="field is-horizontal">
+              <div class="field-label is-normal">
+                <label class="label">fletch.sh/</label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control">
+                    <input v-model='name' class="input" type="text" placeholder="(short-n-catchy)">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="shrink-button">
+              <button type='submit' class="button is-info is-hovered is-large is-success">Generate!</button>
+            </div>
+        </form>
+          <h1 v-if="success" class="title is-1" style="text-align: center; margin-top: auto;"><a :href="'/'+name" target="_blank">https://fletch.sh/{{name}}</a></h1>
+      </main>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js'></script>
+    <script src = "./main.js"></script>
+</body>
+</html>
