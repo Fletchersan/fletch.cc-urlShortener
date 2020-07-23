@@ -1,7 +1,7 @@
 const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
-
+const path = require('path')
 const urls = require('./db/urls');
 
 const app = express();
@@ -10,7 +10,6 @@ const app = express();
 app.use(morgan('tiny'));
 app.use(bodyParser.json());
 app.use(express.static('./public'))
-
 
 app.get('/:name', (req, res) => {
     urls.find(req.params.name)
