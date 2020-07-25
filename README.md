@@ -27,8 +27,8 @@
 * [x] Create route to redirect a url
   * [x] Search by name - if found, redirect to url
     * [x] If not found, show 404
-* [ ] Deploy!
-* [ ] Alias domain
+* [x] Deploy!
+* [x] Alias domain
 
 ## Stretch
 * [ ] Log links to a click
