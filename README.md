@@ -2,7 +2,7 @@ A full stack url shortener made in bulma css, vue js, node(express) and mongodb
 Deployed on an amazon ec2 instance
 
 
-*[x] Create Server Folder
+* [x] Create Server Folder
   * [x] Init npm
   * [x] Add express morgan body-parser nodemon
   * [x] Add start script and dev script
